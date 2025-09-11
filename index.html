@@ -5,34 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kalkulator</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
   <div id="calculator">
-    <input id="display" readonly>
+    <div id="display">
+      <div class="prev"></div>
+      <div class="cur"></div> 
+    </div>
+  
 
     <div id="keys">
-      <button class="func">√</button>
-      <button onclick="appendToDisplay('7')" class="num">7</button>
-      <button onclick="appendToDisplay('8')" class="num">8</button>
-      <button onclick="appendToDisplay('9')" class="num">9</button>
-      <button onclick="appendToDisplay('/')" class="op">÷</button>
-      <button onclick="appendToDisplay('%')" class="op">%</button>
-      <button class="func">←</button>
-      <button onclick="appendToDisplay('4')" class="num">4</button>
-      <button onclick="appendToDisplay('5')" class="num">5</button>
-      <button onclick="appendToDisplay('6')" class="num">6</button>
-      <button onclick="appendToDisplay('*')" class="op">*</button>
-      <button onclick="appendToDisplay('-')" class="op">-</button>
-      <button onclick="cleardisplay()" class="clear">AC</button>
-      <button onclick="appendToDisplay('1')" class="num">1</button>
-      <button onclick="appendToDisplay('2')" class="num">2</button>
-      <button onclick="appendToDisplay('3')" class="num">3</button>
-      <button onclick="appendToDisplay('+')" class="op" id="plus">+</button>
-      <button class="equals" onclick="calculate()">=</button>
-      <button class="clear">C</button>
-      <button onclick="appendToDisplay('0')" class="num">0</button>
+      <button class="square">√</button>
+
+      <button class="num">7</button>
+      <button class="num">8</button>
+      <button class="num">9</button>
+
+      <button class="op" id="divide">÷</button>
+      <button class="op" id="modulo">%</button>
+      <button class="backspace">←</button>
+
+      <button class="num">4</button>
+      <button class="num">5</button>
+      <button class="num">6</button>
+
+      <button class="op" id="times">*</button>
+      <button class="op" id="minus">-</button>
+      <button class="clear-all">AC</button>
+
+      <button class="num">1</button>
+      <button class="num">2</button>
+      <button class="num">3</button>
+
+      <button class="op" id="plus">+</button>
+      <button class="equals">=</button>
+      <button class="clear-input">C</button>
+
+      <button class="num">0</button>
       <button class="num">00</button>
-      <button onclick="appendToDisplay('.')" class="num">.</button>
+      <button class="num">.</button>
     </div>
   </div>
 </body>

@@ -1,14 +1,20 @@
+/* tubuh website yang menyimpan kalkulator */
 body {
+  /* reset margin default */
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fefee8;
+  /* dengan flex grid kita tidak perlu melakukan absolute positioning */
+  display: grid;
+  /* membuat kalkulator di tengah-tengah screen*/
+  place-items: center; 
+  min-height: 100vh;
+  background-color: #161616;
   font-family: Arial, sans-serif;
 }
 
+/* kalkulator yang menyimpan 1. Display 2. Keys */
 #calculator {
+  display: grid;
+  place-items: center; 
   background: #d9ecff;
   border: 2px solid #004080;
   border-radius: 6px;
@@ -17,24 +23,51 @@ body {
   width: 100%;
 }
 
+/* display yang menyimpan 1. Previous operand 2. Current operand */
 #display {
+  background-color: white;
   width: 97%;
-  height: 60px;
-  font-size: 2rem;
-  text-align: right;
+  min-height: 60px;
   border: 1px solid #aaa;
-  margin-bottom: 10px;
-  padding: 5px;
   border-radius: 3px;
+  padding: 5px;
+  /* teks dibawa ke kanan */
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+/* previous operand */
+#display .prev {
+  color: black;
+  /* jika overflow, break ke bawah */
+  overflow-wrap: anywhere;
+}
+
+/*  */
+#display .cur {
+  color: black;
+  font-weight: bold;
+  font-size: 2rem;
+  /* jika overflow, break ke bawah */
+  overflow-wrap: anywhere;
+}
+
+/* display unfocusable dalam kalkulator */
+#display:focus {
+  outline: none;
+}
+
+/* grid yang berisi tombol-tombol kalkulator */
 #keys {
+  padding-top: 5px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 5px;
 }
 
-
+/* tombol kalkulator */
 button {
   padding: 15px;
   font-size: 1.2rem;
@@ -44,18 +77,23 @@ button {
   cursor: pointer;
 }
 
+/* beri petunjuk tombol yang dihover */
+button:hover {
+ filter: brightness(70%);
+}
+
+/* memberi warna pada tombol-tombol */
 .num {
   background: #fff;
   color: #004080;
 }
-
 
 .op {
   background: #999;
   color: white;
 }
 
-.clear {
+.clear-all, .clear-input{
   background: red;
   color: white;
 }
@@ -68,4 +106,9 @@ button {
   background: #0066cc;
   color: white;
   grid-row: span 2; 
+}
+
+.square {
+  background: #999;
+  color: white;
 }
